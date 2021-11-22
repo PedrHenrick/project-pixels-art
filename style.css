@@ -6,6 +6,7 @@
 }
 
 #pixel-board {
+
   /* referência: https://developer.mozilla.org/pt-BR/docs/Web/CSS/max-width */
   max-width: 450px;
 }
@@ -15,7 +16,7 @@
 }
 
 .pixel {
-  border: solid 1px black; 
+  border: solid 1px black;
   padding: 40px;
   max-width: 40px;
   max-height: 40px;
