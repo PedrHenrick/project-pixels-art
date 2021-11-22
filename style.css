@@ -6,14 +6,17 @@
 }
 
 #pixel-board {
-    margin-right: 400px;
+    max-width: 450px;
 }
-
+.line {
+    display: block;
+}
 .pixel {
-    border: solid 2px black; 
+    border: solid 1px black; 
     padding: 40px;
     display: inline-block;
     margin: -2px;
+    background-color: white;
 }
 
 .colorRed {
