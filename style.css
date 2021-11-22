@@ -1,3 +1,9 @@
+.color {
+    display: inline-block;
+    padding: 40px;
+    margin: 3px;
+    border: solid 1px black;
+}
 .colorRed {
     background-color: rgb(245, 44, 44);
 }
@@ -10,6 +16,6 @@
 .colorGreen {
     background-color: greenyellow;
 }
-div {
-    border: black;
+.colorBlack {
+    background-color: rgb(29, 29, 29);
 }
