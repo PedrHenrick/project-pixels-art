@@ -1,0 +1,15 @@
+.colorRed {
+    background-color: rgb(245, 44, 44);
+}
+.colorYellow {
+    background-color: rgb(245, 245, 55);
+}
+.colorBlue {
+    background-color: rgb(110, 110, 243);
+}
+.colorGreen {
+    background-color: greenyellow;
+}
+div {
+    border: black;
+}
