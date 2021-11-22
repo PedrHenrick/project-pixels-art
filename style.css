@@ -5,8 +5,19 @@
   border: solid 1px black;
 }
 
+#pixel-board {
+    margin-right: 400px;
+}
+
+.pixel {
+    border: solid 2px black; 
+    padding: 40px;
+    display: inline-block;
+    margin: -2px;
+}
+
 .colorRed {
-  color: rgb(245, 44, 44);
+  background-color: rgb(245, 44, 44);
 }
 
 .colorBlue {
