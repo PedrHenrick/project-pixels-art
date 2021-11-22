@@ -8,9 +8,11 @@
 #pixel-board {
     max-width: 450px;
 }
+
 .line {
     display: block;
 }
+
 .pixel {
     border: solid 1px black; 
     padding: 40px;
