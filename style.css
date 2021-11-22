@@ -1,21 +1,22 @@
 .color {
-    display: inline-block;
-    padding: 40px;
-    margin: 3px;
-    border: solid 1px black;
+  display: inline-block;
+  padding: 40px;
+  margin: 3px;
+  border: solid 1px black;
 }
+
 .colorRed {
-    background-color: rgb(245, 44, 44);
+  color: rgb(245, 44, 44);
 }
-.colorYellow {
-    background-color: rgb(245, 245, 55);
-}
+
 .colorBlue {
-    background-color: rgb(110, 110, 243);
+  background-color: rgb(110, 110, 243);
 }
+
 .colorGreen {
-    background-color: greenyellow;
+  background-color: greenyellow;
 }
+
 .colorBlack {
-    background-color: black;
+  background-color: black;
 }
