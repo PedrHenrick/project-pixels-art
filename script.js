@@ -42,8 +42,10 @@ let btAlterar  = document.querySelector('#generate-board');
 
 input.addEventListener('keyup', teclado);
 function teclado(event) {
-    const pixels = document.querySelectorAll('.pixel');
   if (event.key === 'Enter' && input.value > 0) {
+    for (const key of pixels) {
+        key.style.backgroundColor = 'white';
+    }
     if (input.value < 5) {
       for (const key of pixels) {
         key.style.width = 5 * 5 + 'px';
@@ -64,8 +66,10 @@ function teclado(event) {
 }
 btAlterar.addEventListener('click', conferirInput)
 function conferirInput() {
-    const pixels = document.querySelectorAll('.pixel');
   if (input.value > 0) {
+    for (const key of pixels) {
+        key.style.backgroundColor = 'white';
+    }
     if (input.value <= 5) {
       for (const key of pixels) {
         key.style.width = 5 * 5 + 'px';
@@ -73,16 +77,16 @@ function conferirInput() {
       }
     } else if (input.value >= 50) {
       for (const key of pixels) {
-          key.style.width = 50 * 50 + 'px';
-          key.style.height = 50 * 50 + 'px'
-        }
-      } else {
-        for (const key of pixels) {
-          key.style.width = input.value * input.value + 'px';
-          key.style.height = input.value * input.value + 'px'
-        }
+        key.style.width = 50 * 50 + 'px';
+        key.style.height = 50 * 50 + 'px'
       }
     } else {
-      alert ("Board inválido!");
+      for (const key of pixels) {
+        key.style.width = input.value * input.value + 'px';
+        key.style.height = input.value * input.value + 'px'
+      }
+    }
+  } else {
+    alert ("Board inválido!");
   }
 }
