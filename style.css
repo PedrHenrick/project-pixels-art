@@ -1,3 +1,7 @@
+body {
+  background-color: grey;
+}
+
 .color {
   display: inline-block;
   padding: 40px;
@@ -8,7 +12,6 @@
 #pixel-board {
 
   /* referência: https://developer.mozilla.org/pt-BR/docs/Web/CSS/max-width */
-  
   margin-top: 5px;
 }
 
