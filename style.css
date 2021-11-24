@@ -18,7 +18,7 @@ body {
 }
 
 .line {
-  display: block;
+  display: flex;
 }
 
 .pixel {
@@ -28,4 +28,5 @@ body {
   height: 40px;
   display: inline-block;
   margin: -2px;
+  background-color: white;
 }
