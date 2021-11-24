@@ -30,7 +30,7 @@ for (let i = 0; i < color.length; i += 1) {
 
 // Campo JavaScript
 // Configurando botão clear
-const pixel = document.querySelectorAll('div, #pixel-board');
+const pixel = document.querySelectorAll('.pixel');
 const btLimpar = document.querySelector('button');
 btLimpar.addEventListener('click', ClearPixelBox);
 function ClearPixelBox() {
@@ -75,7 +75,7 @@ function conferirInput() {
 }
 
 // Variáveis
-const pixels = document.querySelector('div, #pixel-board');
+const pixels = document.querySelector('#pixel-board, div');
 const selectedPosicion = document.querySelector('#color-palette');
 
 // Seleção de cor
