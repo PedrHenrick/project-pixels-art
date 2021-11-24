@@ -1,6 +1,7 @@
 // Campo HTML
+let section = document.querySelector('section');
 const divBoard = document.createElement('div');
-document.body.appendChild(divBoard);
+section.appendChild(divBoard);
 divBoard.id = 'pixel-board';
 
 for (let i = 0; i < 5; i += 1) {
@@ -15,6 +16,7 @@ for (let j = 0; j < 5; j += 1) {
     let divPixel = document.createElement('div');
     line[j].appendChild(divPixel);
     divPixel.className = 'pixel'
+    divPixel.style.backgroundColor = 'white';
   }
 }
 alert("Sua tabela se inicia em 5x5!");
@@ -74,22 +76,23 @@ function conferirInput() {
       alert(`Você alterou sua tabela para ${input.value}x${input.value} !`); 
     }
     let boards = document.querySelector('#pixel-board').remove();
-    const divBoards = document.createElement('div');
-    document.body.appendChild(divBoards);
-    divBoards.id = 'pixel-board';
-    
+    const divBoard = document.createElement('div');
+    section.appendChild(divBoard);
+    divBoard.id = 'pixel-board';
+
     for (let i = 0; i < lineDivs; i += 1) {
-      const boardss = document.querySelector('#pixel-board');
-      const divLines = document.createElement('div');
-      boardss.appendChild(divLines);
-      divLines.className = 'line';
+      const boards = document.querySelector('#pixel-board');
+      const divLine = document.createElement('div');
+      boards.appendChild(divLine);
+      divLine.className = 'line';
     }
     for (let j = 0; j < pixelsDiv; j += 1) {
-      for(let i = 0; i < pixelsDiv; i += 1) {
-        let lines = document.querySelectorAll('div .line')
-        let divPixels = document.createElement('div');
-        lines[j].appendChild(divPixels);
-        divPixels.className = 'pixel'
+      for(let g = 0; g < pixelsDiv; g += 1) {
+        let line = document.querySelectorAll('.line')
+        let divPixel = document.createElement('div');
+        line[j].appendChild(divPixel);
+        divPixel.className = 'pixel'
+        divPixel.style.backgroundColor = 'white';
       }
     }
   } else {

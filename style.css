@@ -4,9 +4,11 @@ body {
 
 .color {
   display: inline-block;
-  padding: 40px;
+  width: 40px;
+  height: 40px;
   margin: 3px;
   border: solid 1px black;
+  box-sizing: border-box;
 }
 
 #pixel-board {
@@ -21,9 +23,9 @@ body {
 
 .pixel {
   border: solid 1px black;
+  box-sizing: border-box;
   width: 40px;
   height: 40px;
   display: inline-block;
   margin: -2px;
-  background-color: white;
 }
