@@ -17,12 +17,27 @@ for (let j = 0; j < 5; j += 1) {
     divPixel.className = 'pixel'
   }
 }
+alert("Sua tabela se inicia em 5x5!");
 
 // Campo CSS
 // adicionando as cores na paleta;
+let colorOne = Math.round(Math.random()* 300);
+let colorTwo = Math.round(Math.random()* 300);
+let ColorTree = Math.round(Math.random()* 300);
+
+let newColorRGBTwo = `rgb(${colorOne}, ${colorTwo}, ${ColorTree})`;
+let newColorRGBTree = `rgb(${colorOne}, ${ColorTree}, ${colorTwo})`;
+let newColorRGBFour = `rgb(${colorTwo}, ${colorOne}, ${ColorTree})`;
+
+let arrayColor = [];
+arrayColor.push('black');
+arrayColor.push(newColorRGBTwo);
+arrayColor.push(newColorRGBTree);
+arrayColor.push(newColorRGBFour);
+
 const color = document.querySelectorAll('.color');
-for (const key of color) {
-  key.style.backgroundColor = key.classList[1];
+for (let i = 0; i < color.length; i += 1) {
+  color[i].style.backgroundColor = arrayColor[i];
 }
 // Campo JavaScript e CSS
 // campo de declaração de variáveis
@@ -37,58 +52,26 @@ function ClearPixelBox() {
 }
 
 // configurando input e botão
-let input = document.querySelector('input');
 let btAlterar  = document.querySelector('#generate-board');
+let input = document.querySelector('#board-size');
 
-input.addEventListener('keyup', teclado);
-function teclado(event) {
-  if (event.key === 'Enter' && input.value > 0) {
-    if (input.value <= 5) {
-      var lineDivs = 5;
-      var pixelsDiv = 5;
-    } else if (input.value >= 50) {
-      var lineDivs = 50;
-      var pixelsDiv = 50;  
-    } else {
-      var lineDivs = input.value;
-      var pixelsDiv = input.value; 
-    }
-    let boards = document.querySelector('#pixel-board').remove();
-
-    const divBoard = document.createElement('div');
-    document.body.appendChild(divBoard);
-    divBoard.id = 'pixel-board';
-    
-    for (let i = 0; i < lineDivs; i += 1) {
-      const boards = document.querySelector('#pixel-board');
-      const divLine = document.createElement('div');
-      boards.appendChild(divLine);
-      divLine.className = 'line';
-    }
-    for (let j = 0; j < pixelsDiv; j += 1) {
-      for(let i = 0; i < pixelsDiv; i += 1) {
-        let line = document.querySelectorAll('.line')
-        let divPixel = document.createElement('div');
-        line[j].appendChild(divPixel);
-        divPixel.className = 'pixel'
-      }
-    }
-  }
-}
 btAlterar.addEventListener('click', conferirInput)
 let lineDivs;
 let pixelsDiv;
 function conferirInput() {
   if (input.value > 0) {
-    if (input.value <= 5) {
+    if (input.value < 5) {
       lineDivs = 5;
       pixelsDiv = 5;
-    } else if (input.value >= 50) {
+      alert(`Tamanho mínimo ultrapaçado, como padrão usaremos ${lineDivs}x${pixelsDiv}!`);
+    } else if (input.value > 50) {
       lineDivs = 50;
       pixelsDiv = 50;  
+      alert(`Tamanho máximo ultrapaçado, como padrão usaremos ${lineDivs}x${pixelsDiv}!`);
     } else {
       lineDivs = input.value;
-      pixelsDiv = input.value; 
+      pixelsDiv = input.value;
+      alert(`Você alterou sua tabela para ${input.value}x${input.value} !`); 
     }
     let boards = document.querySelector('#pixel-board').remove();
     const divBoards = document.createElement('div');
@@ -98,7 +81,7 @@ function conferirInput() {
     for (let i = 0; i < lineDivs; i += 1) {
       const boardss = document.querySelector('#pixel-board');
       const divLines = document.createElement('div');
-      boards.appendChild(divLines);
+      boardss.appendChild(divLines);
       divLines.className = 'line';
     }
     for (let j = 0; j < pixelsDiv; j += 1) {
