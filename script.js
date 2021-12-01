@@ -4,8 +4,8 @@ for (let j = 0; j < 5; j += 1) {
   const sectionLine = document.createElement('section');
   sectionLine.className = 'line';
   boards.appendChild(sectionLine);
-  for(let i = 0; i < 5; i += 1) {
-    let divPixel = document.createElement('div');
+  for (let i = 0; i < 5; i += 1) {
+    const divPixel = document.createElement('div');
     divPixel.className = 'pixel';
     sectionLine.appendChild(divPixel);
   }
@@ -13,9 +13,9 @@ for (let j = 0; j < 5; j += 1) {
 
 // Campo CSS
 // adicionando as cores na paleta;
-let newColorRGB2 = `rgb(${Math.round(Math.random()* 300)}, ${Math.round(Math.random()* 300)}, ${Math.round(Math.random()* 300)})`;
-let newColorRGB3 = `rgb(${Math.round(Math.random()* 300)}, ${Math.round(Math.random()* 300)}, ${Math.round(Math.random()* 300)})`;
-let newColorRGB4 = `rgb(${Math.round(Math.random()* 300)}, ${Math.round(Math.random()* 300)}, ${Math.round(Math.random()* 300)})`;
+let newColorRGB2 = `rgb(${Math.round(Math.random() * 300)}, ${Math.round(Math.random() * 300)}, ${Math.round(Math.random() * 300)})`;
+let newColorRGB3 = `rgb(${Math.round(Math.random() * 300)}, ${Math.round(Math.random() * 300)}, ${Math.round(Math.random() * 300)})`;
+let newColorRGB4 = `rgb(${Math.round(Math.random() * 300)}, ${Math.round(Math.random() * 300)}, ${Math.round(Math.random() * 300)})`;
 
 let arrayColor = [];
 arrayColor.push('black');
@@ -34,18 +34,18 @@ const pixel = document.querySelectorAll('.pixel');
 const btLimpar = document.querySelector('button');
 btLimpar.addEventListener('click', ClearPixelBox);
 function ClearPixelBox() {
-    for (const key of pixel) {
-        key.style.backgroundColor = 'white';
-    }
+  for (const key of pixel) {
+    key.style.backgroundColor = 'white';
+  }
 }
 
 // Variáveis
 let lengthDivs;
-let btAlterar  = document.querySelector('#generate-board');
-let input = document.querySelector('#board-size');
+const btAlterar  = document.querySelector('#generate-board');
+const input = document.querySelector('#board-size');
 
 // Configurando input e botão
-btAlterar.addEventListener('click', conferirInput)
+btAlterar.addEventListener('click', conferirInput);
 function conferirInput() {
   // Verificação de valor
   if (input.value > 0) {
@@ -70,7 +70,7 @@ function conferirInput() {
       }
     }
   } else {
-    alert ("Board inválido!");
+    alert(`Board inválido!`);
   }
 }
 
@@ -80,19 +80,21 @@ const selectedPosicion = document.querySelector('#color-palette');
 
 // Seleção de cor
 function colorPalette() {
-  selectedPosicion.addEventListener('click', function(event) {
-      const selected = document.querySelector('.selected')
-      selected.classList.remove('selected');
-      event.target.classList.add('selected');        
-  })
+  selectedPosicion.addEventListener('click', eventos);
+  function eventos (event) {
+    const selected = document.querySelector('.selected')
+    selected.classList.remove('selected');
+    event.target.classList.add('selected');        
+  }
 }
 colorPalette();
 
 // Adicionando cor aos pixels
 function colorPixel() {
-  pixels.addEventListener('click', function(event) {
+  pixels.addEventListener('click', 
+  function(event) {
       const selected = document.querySelector('.selected')
       event.target.style.backgroundColor = selected.style.backgroundColor;       
-  })
+  });
 }
 colorPixel();
